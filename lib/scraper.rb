@@ -32,6 +32,8 @@ class Scraper
         link= student[:blog]
       end
     end
+    student[:profile_quote] = profile_html.css(".profile-quote").text if profile_html.css(".profile-quote")
+    student[:bio] = profile_html.css("div.bio-content.content-holder div.description-holder p").text if profile_html.css("div.bio-content.content-holder div.description-holder p")
     student
   end
 
