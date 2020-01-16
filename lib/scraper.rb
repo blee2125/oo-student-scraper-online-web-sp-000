@@ -23,15 +23,15 @@ class Scraper
     links= profile_html.css(".social-icon-container").children.css("a").map {|e| e.attribute("href").value}
     links.each do |link|
       if link.include?("linkedin")
-
+        link= student[:linkedin]
       elsif link.include?("github")
-
+        link= student[:github]
       elsif link.include?("twitter")
-
+        link= student[:twitter]
       else
-
+        link= student[:blog]
       end
-
+    end
     student
   end
 
